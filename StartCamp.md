@@ -74,6 +74,7 @@
 - [유료 에디터 Typora](https://typora.io/)
 - [무료 에디터 MarkText](https://www.marktext.cc/)
 - [VSCode 확장프로그램 Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
+- [테이블 간편 제작 사이트](https://www.tablesgenerator.com/)
 
 <br/>
 
@@ -145,3 +146,57 @@
 
 ### Git init 주의사항
 - Git 로컬 저장소 내에 또 다른 git 로컬 저장소를 만들지 말 것(즉, 이미 git 로컬 저장소인 디렉토리 내부 하단에서 git init 명령어를 다시 입력하지 말 것)
+
+### Git 메뉴얼
+- [Git 한글 메뉴얼](https://git-scm.com/book/ko/v2)
+<br/>
+<br/>
+-------------
+<br/>
+
+# Remote Repository(리모트 저장소)
+- 리모트 저장소 : 인터넷이나 네트워크 어딘가에 있는 저장소
+- 다른 사람들과 함께 일한다는 것은 리모트 저장소를 관리하면서 데이터를 거기에 'Push'하고 'Pull'하는 것
+- 다양한 원격 저장소 서비스 : GitLab, GitHub, Bitbucket
+
+### 로컬 & 원격 저장소
+- GitLab이나 GitHub에 있는 것을 원격 저장소, 내 컴퓨터 내에 있는 것을 로컬 저장소
+
+### 명령어
+
+|명령어|수행 내용|
+|:---:|:---:|
+|**git remote add** origin remote_repo_url|origin은 별칭이며 로컬 저장소에 원격 저장소 주소 추가
+|**git remote -v**|연결된 원격 저장소를 보여줌<br/>fetch : 원격에서 로컬<br/>push : 로컬에서 원격
+|**git push -u** origin master|원격 저장소에 commit 목록을 업로드<br/>-최초 push시에는 GitHub로부터 인증서(Git credential) 요구받음
+|**git pull** origin master|원하는 변경사항만 다운로드
+|**git clone** remote_repo_url|원격 저장소 전체를 복제(다운로드)<br/>clone으로 받은 프로젝트는 이미 git init이 되어 있음(git init 안해도 됨)<br/>폴더명은 원격저장소 명으로 지어짐<br/>git이 없는 디렉토리에 가서 진행해야 함
+|**git remote remove** origin|잘못 연결된 원격저장소 삭제
+|**git remote rm** remote_repo_url|잘못 연결된 원격저장소 삭제
+
+### gitignore
+- Git에서 특정파일이나 디렉토리를 추적하지 않도록 설정하는데 사용되는 텍스트 파일(프로젝트에 따라 공유하지 않아야 될 파일이 있기 때문)
+- 생성 방법
+    1. .gitignore 파일 생성(파일명 앞에 '.'입력, 확장자 없음)
+    2. 해당 텍스트 파일에 제외시키고 싶은 디렉토리나 파일명 입력
+- 이미 git의 관리를 받은 파일이나 디렉토리는 나중에 gitignore에 작성해도 적용되지 않음
+[gitignore에 들어갈만한 것들을 알려주는 프로그램](https://www.toptal.com/developers/gitignore)
+
+<br/>
+
+# GitHub 활용
+- 프로젝트 협업
+    - 개발 면접 지원 시 본인의 GitHub 주소를 공유해 어떤 프로젝트들을 진행했고, 어떤 코드를 작성했는지 공유하고 평가 받기 위해 사용
+- 개인 포트폴리오
+    - TIL(Today I Learned)을 통해 내가 학습하는 것을 기록
+- 오픈 소스 프로젝트에 기여
+
+### '문서화'의 중요성
+
+### GitHub 프로필
+- Repository에서 내 닉네임과 동일한 것을 만들어서 README.md를 수정하여서 작성
+- README.md
+    - 프로젝트에 대한 설명, 사용 방법, 문서화된 정보 등을 포함하는 역할
+    - Markdown 형식으로 작성되며, 프로젝트의 사용자, 개발자, 혹은 기여자들에게 프로젝트에 대한 전반적인 이해와 활용 방법을 제공하는데 사용
+    - 주로 프로젝트의 소개, 설치 및 설정 방법
+    - 반드시 저장소 최상단에 위치
